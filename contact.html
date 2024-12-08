@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peer Tutor</title>
+    <title>Contact Info</title>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
@@ -29,9 +30,36 @@
     </header>
 
 
-    <div class="home_page_body">
-        &nbsp;
-    </div>
+    <main class="contact-page">
+        <section class="contact-info">
+            <h1>Contact Information</h1>
+            <p>If you have any questions, feel free to reach out to us via the contact details below:</p>
+            <ul>
+                <li>Email: <a href="mailto:contact@peertutor.com" class="email-link">contact@peertutor.com</a></li>
+                <li>Phone: +880123456789</li>
+                <li>Address: 123 Green University Street, Dhaka, Bangladesh</li>
+            </ul>
+        </section>
+
+        <section class="contact-form outerbox">
+            <h2>Send Us a Message</h2>
+            <form action="send-message.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="contact-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     
     <footer class="footer">
@@ -57,6 +85,6 @@
         <div class="footer-bottom">
           <p>&copy; 2024 Peer Tutor | Developed by Al Shahriar Ahommed Shanto & Tajmin Khanam</p>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>
