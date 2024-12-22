@@ -3,14 +3,14 @@ include 'db_connect.php';
 
 // Check if form data is received
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $studentId = $_POST['studentId'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
-    $institution = $_POST['institution'];
-    $department = $_POST['department'];
-    $batch = $_POST['batch'];
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $studentId = mysqli_real_escape_string($conn, $_POST['studentId']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $institution = mysqli_real_escape_string($conn, $_POST['institution']);
+    $department = mysqli_real_escape_string($conn, $_POST['department']);
+    $batch = mysqli_real_escape_string($conn, $_POST['batch']);
 
     // Debugging: Print received data (commented out for production)
     // echo "Received Data:<br>";

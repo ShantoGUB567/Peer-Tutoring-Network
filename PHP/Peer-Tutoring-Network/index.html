@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank ATM Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0078D7;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #0078D7;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .options button {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0078D7;
+            color: white;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background-color: #005EA6;
+        }
+        footer {
+            text-align: center;
+            background: #003A6B;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bank ATM Interface</h1>
+    </header>
+
+    <div class="container">
+        <h2>Select an Option</h2>
+        <div class="options">
+            <button>Check Balance</button>
+            <button>Withdraw Cash</button>
+            <button>Deposit Cash</button>
+            <button>Mini Statement</button>
+            <button>Change PIN</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bank ATM Interface</p>
+    </footer>
+</body>
+</html>
