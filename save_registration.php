@@ -27,20 +27,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Error: Passwords do not match.");
     }
 
-    // Prepare SQL query using prepared statements
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $stmt = $conn->prepare("INSERT INTO users (name, student_id, email, password, phone, institution, department, batch) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $name, $studentId, $email, $hashedPassword, $phone, $institution, $department, $batch);
+    // Prepare SQL query using direct execution
+    //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // $sql = "INSERT INTO users (name, student_id, email, password, phone, institution, department, batch) VALUES ('$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch')";
 
-    // Execute the prepared statement
-    if ($stmt->execute()) {
+    // $sql = "INSERT INTO `users` (`id`, `name`, `studentId`, `email`, `password`, `phone`, `institution`, `department`, `batch`, `created_at`) VALUES (NULL, '$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch', current_timestamp());";
+
+    $sql = "INSERT INTO users ( name, studentId, email, password, phone, institution, department, batch, created_at) VALUES ( '$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch', current_timestamp());";
+
+    // // Prepare SQL query using prepared statements
+    // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // $stmt = $conn->prepare("INSERT INTO users (name, studentid, email, password, phone, institution, department, batch) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    // $stmt->bind_param("ssssssss", $name, $studentId, $email, $hashedPassword, $phone, $institution, $department, $batch);
+    
+    if ($conn->query($sql) === TRUE) {
         echo "Registration successful!";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    $stmt->close();
+    
+    $conn->close();
     }
-} else {
+ else {
     echo "Invalid request method.";
 }
 ?>
