@@ -353,6 +353,7 @@ button:hover {
     width: 80%;
     max-width: 400px;
     text-align: center;
+    margin: 20px auto;
 }
 
 outerbox{
@@ -411,4 +412,217 @@ outerbox{
 
 .contact-form button:hover {
     background-color: #003366;
+}
+
+/* Course container styling */
+.course-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next row */
+  justify-content: center; /* Centers blocks horizontally */
+  align-items: center; /* Centers blocks vertically */
+  gap: 20px; /* Space between blocks */
+  padding: 20px; /* Padding around the container */
+  min-height: 100vh; /* Ensures full height to center blocks */
+  background-color: #f4f4f4; /* Light gray background */
+  box-sizing: border-box; /* Includes padding in container dimensions */
+}
+
+/* Individual course block styling */
+.course {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px; /* Fixed width for consistent layout */
+  padding: 20px; /* Inner spacing */
+  text-align: center; /* Center text */
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 10px; /* Additional margin for spacing in case of overflow */
+}
+
+/* Hover effect for course blocks */
+.course:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Course title styling */
+.course h2 {
+  font-size: 1.5rem; /* Slightly larger heading */
+  color: #004d99; /* Navy blue */
+  margin-bottom: 10px;
+}
+
+/* Course details styling */
+.course p {
+  font-size: 1rem; /* Standard paragraph size */
+  color: #555; /* Neutral text color */
+  margin: 10px 0;
+}
+
+/* Time to complete emphasis */
+.course p strong {
+  color: #ff6600; /* Orange for emphasis */
+}
+
+/* Blog container */
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between the blog blocks */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Blog block */
+.blog {
+  flex: 0 1 calc(50% - 20px); /* Two columns with gap adjustment */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for blog block */
+.blog:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog title */
+.blog h2 {
+  font-size: 1.6rem;
+  color: #004d99; /* Navy Blue */
+  margin-bottom: 10px;
+}
+
+/* Author details */
+.blog p strong {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Blog content preview */
+.blog p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Posted date */
+.blog p em {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Read More link */
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #004d99; /* Navy Blue */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.read-more:hover {
+  background-color: #003366; /* Darker Navy Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog {
+      flex: 0 1 100%; /* Stack in one column for smaller screens */
+  }
+}
+
+
+.services-description {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-description h1 {
+  font-size: 2rem;
+  color: #004d99; /* Navy Blue */
+  margin-bottom: 20px;
+}
+
+.services-description p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Add Blog Form */
+.add-blog-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-blog-form h2 {
+  font-size: 2rem;
+  color: #004d99; /* Navy Blue */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-blog-form .form-group {
+  margin-bottom: 15px;
+}
+
+.add-blog-form label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.add-blog-form input,
+.add-blog-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.add-blog-form textarea {
+  resize: vertical;
+}
+
+.add-blog-form button {
+  background-color: #004d99;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-blog-form button:hover {
+  background-color: #003366;
 }

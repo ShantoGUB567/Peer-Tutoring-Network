@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service - Peer Tutor</title>
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
@@ -28,13 +29,46 @@
           </nav>
     </header>
 
-    <div class="services-description">
-      <h1>Our Services</h1>
-      <p>At Peer Tutoring Network, we are committed to providing exceptional resources and opportunities for students to excel academically. Our services are designed to empower learners with the support and guidance they need to achieve their goals.</p>
-      <p>Whether you are seeking one-on-one tutoring, group study sessions, or access to a community of passionate learners and educators, our platform is here to help. Explore our wide range of services tailored to meet diverse learning needs.</p>
-      <p>Join us and unlock your full potential through collaborative learning and expert mentorship!</p>
+
+    <div class="login-container">
+        <div class="login-box">
+          <h1>Student Login</h1>
+<?php
+session_start();
+
+// Check if the user is logged in
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $student_id = $_POST['student_id'];
+    $password = $_POST['password'];
+
+    // Hardcoded credentials for demonstration (replace with database check in production)
+    if ($student_id === '123456789' && $password === 'password') {
+        $_SESSION['username'] = $student_id; // Set session variable
+        header("Location: dashboard.php");
+        exit();
+    } else {
+        header("Location: dashboard.php");
+        echo "<script>alert('Invalid Student ID or Password');</script>";
+    }
+}
+?>
+<form action="login.php" method="POST" class="login-form">
+            <div class="form-group">
+              <label for="student-id">Student ID</label>
+              <input type="text" id="student-id" name="student_id" maxlength="9" pattern="\d{9}" placeholder="Enter your Student ID" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <p class="register-link">
+              Don't have an account? <a href="register.html">Register here</a>.
+            </p>
+          </form>
+        </div>
     </div>
-  
+
 
     <footer class="footer">
         <div class="footer-section contact">
@@ -57,7 +91,7 @@
           </form>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 Peer Tutor | Developed by Al Shahriar Ahommed Shanto & Tajmin Khanam</p>
+            <p>&copy; 2024 Peer Tutor | Developed by Al Shahriar Ahommed Shanto & Tajmin Khanam</p>
         </div>
       </footer>
 </body>

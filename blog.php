@@ -3,24 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peer Tutor</title>
+    <title>Blog - Peer Tutor</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- <style>
-      .course-container {
-        display: flex;
-        flex-wrap: wrap; /* Allows wrapping to the next row */
-        justify-content: center; /* Centers blocks horizontally */
-        align-items: center; /* Centers blocks vertically */
-        gap: 20px; /* Space between blocks */
-        padding: 20px; /* Padding around the container */
-        min-height: 100vh; /* Ensures full height to center blocks */
-        background-color: #f4f4f4; /* Light gray background */
-        box-sizing: border-box; /* Includes padding in container dimensions */
+    <style>
+      /* Blog container */
+      .blog-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px; /* Space between the blog blocks */
+          padding: 20px;
+          margin: 0 auto;
       }
 
-    </style> -->
+      /* Blog block */
+      .blog {
+          flex: 0 1 calc(50% - 20px); /* Two columns with gap adjustment */
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-sizing: border-box;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      /* Hover effect for blog block */
+      .blog:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Blog title */
+      .blog h2 {
+          font-size: 1.6rem;
+          color: #004d99; /* Navy Blue */
+          margin-bottom: 10px;
+      }
+
+      /* Author details */
+      .blog p strong {
+          font-weight: bold;
+          color: #555;
+      }
+
+      /* Blog content preview */
+      .blog p {
+          font-size: 1rem;
+          color: #333;
+          margin-bottom: 10px;
+          line-height: 1.5;
+      }
+
+      /* Posted date */
+      .blog p em {
+          font-size: 0.9rem;
+          color: #888;
+      }
+
+      /* Read More link */
+      .read-more {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 8px 12px;
+          background-color: #004d99; /* Navy Blue */
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          transition: background-color 0.3s;
+      }
+
+      .read-more:hover {
+          background-color: #003366; /* Darker Navy Blue */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          .blog {
+              flex: 0 1 100%; /* Stack in one column for smaller screens */
+          }
+      }
+
+    </style>
+
 </head>
 <body>
     <header class="header">
@@ -43,17 +111,13 @@
         </nav>
     </header>
 
-
-    <main class="main-content">
-      <h1>Available Courses</h1>
-      <?php
-        
-        // Include the file that fetches and displays courses
-        include('fetch_courses.php');
-        ?>
+    <main>
+      <h1 style="text-align: center; margin-top: 20px;">Our Blogs</h1>
+      <div class="blog-container">
+          <?php include 'fetch_blog.php'; ?>
+      </div>
     </main>
 
-    
     <footer class="footer">
         <div class="footer-section contact">
           <h3>Contact Us</h3>

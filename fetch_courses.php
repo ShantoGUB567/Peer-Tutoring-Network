@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "PeerTutorDB";
+$dbname = "peertutordb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

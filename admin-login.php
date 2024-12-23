@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $inputPassword = $_POST['password'];
 
     // Query the database to check admin credentials
-    $sql = "SELECT * FROM Admin WHERE username = ? AND password = ?";
+    $sql = "SELECT * FROM admin WHERE username = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $inputUsername, $inputPassword);
+    $stmt->bind_param("s", $inputUsername);
     $stmt->execute();
     $result = $stmt->get_result();
 

@@ -15,17 +15,17 @@
               <span class="site-name">Peer Tutor</span>
             </a>
           </div>
-        <nav class="nav-menu">
-          <a href="home.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="service.html" class="nav-link">Service</a>
-          <a href="blog.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="login.html" class="nav-link">Login</a>
-          <a href="register.html" class="nav-link">Register</a>
-          <a href="register.html" class="nav-link">Dashboard</a>
-          <a href="register.html" class="nav-link">Admin Dashboard</a>
-        </nav>
+          <nav class="nav-menu">
+            <a href="home.php" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="service.html" class="nav-link">Service</a>
+            <a href="blog.php" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="login.php" class="nav-link">Login</a>
+            <a href="register.php" class="nav-link">Register</a>
+            <a href="dashboard.php" class="nav-link">Dashboard</a>
+            <!-- <a href="register.html" class="nav-link">Admin Dashboard</a> -->
+          </nav>
     </header>
 
 

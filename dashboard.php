@@ -1,37 +1,72 @@
+<?php
+session_start();
+
+// if (!isset($_SESSION['username'])) {
+//     header("Location: admin-login.php");
+//     exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Peer Tutor</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <a href="home.html" class="logo-link">
+            <a href="home.php" class="logo-link">
               <img src="logo.png" alt="Peer Tutor Logo" class="logo">
               <span class="site-name">Peer Tutor</span>
             </a>
           </div>
         <nav class="nav-menu">
-          <a href="home.html" class="nav-link">Home</a>
+          <a href="home.php" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="service.html" class="nav-link">Service</a>
           <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link">Contact</a>
-          <a href="login.html" class="nav-link">Login</a>
-          <a href="register.html" class="nav-link">Register</a>
-          <a href="register.html" class="nav-link">Dashboard</a>
-          <a href="register.html" class="nav-link">Admin Dashboard</a>
+          <a href="logout.php" class="nav-link">Logout</a>
         </nav>
     </header>
 
-    <div class="blog_page_body">
-        <h1>Our Blog</h1>
-        <p>Details about the blog posts will go here.</p>
+<main class="main-content">
+      <h1>Welcome to the Dashboard</h1>
+      <h2>Thank you for logging in, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+      <br>
+
+      <h2>Your Enrolled Courses:</h2>
+      <ul>
+          <li>web programming</li>
+          <li>database management</li>
+          <li>cyber security</li>
+      </ul>
+      
+      <div class="add-blog-form">
+        <h2>Add New Blog</h2>
+        <form action="submit_blog.php" method="POST">
+            <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Blog Content</label>
+                <textarea id="content" name="content" rows="6" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author Name</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Blog</button>
+        </form>
     </div>
+    </main>
 
     <footer class="footer">
         <div class="footer-section contact">

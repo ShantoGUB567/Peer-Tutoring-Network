@@ -28,12 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Prepare SQL query using direct execution
-    //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    // $sql = "INSERT INTO users (name, student_id, email, password, phone, institution, department, batch) VALUES ('$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch')";
-
-    // $sql = "INSERT INTO `users` (`id`, `name`, `studentId`, `email`, `password`, `phone`, `institution`, `department`, `batch`, `created_at`) VALUES (NULL, '$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch', current_timestamp());";
-
-    $sql = "INSERT INTO users ( name, studentId, email, password, phone, institution, department, batch, created_at) VALUES ( '$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch', current_timestamp());";
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO students (name, student_id, email, password, phone, institution, department, batch) VALUES ('$name', '$studentId', '$email', '$hashedPassword', '$phone', '$institution', '$department', '$batch')";
 
     // // Prepare SQL query using prepared statements
     // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

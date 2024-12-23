@@ -1,0 +1,67 @@
+-- Create the database
+CREATE DATABASE peertutordb;
+
+-- Create the students table
+CREATE TABLE students (
+    student_id VARCHAR(9) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    institution VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL,
+    batch VARCHAR(3) NOT NULL
+);
+
+-- Insert sample data into students table
+INSERT INTO students (student_id, name, email, password, phone, institution, department, batch) 
+VALUES 
+('221002567', 'Shanto', 'shanto@example.com', '123', '01712345678', 'Green University of Bangladesh', 'Computer Science and Engineering', '221'),
+('221002566', 'Suma', 'suma@example.com', '123', '01787654321', 'Green University of Bangladesh', 'Software Engineering', '221');
+
+-- Create the admin table
+CREATE TABLE admin (
+    username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(50) NOT NULL
+);
+
+-- Insert sample data into admin table
+INSERT INTO admin (username, password) 
+VALUES 
+('shanto', '567'),
+('suma', '566');
+
+-- Create the course table
+CREATE TABLE course (
+    c_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    details TEXT NOT NULL,
+    time VARCHAR(50) NOT NULL
+);
+
+-- Insert sample data into course table
+INSERT INTO course (name, details, time) 
+VALUES 
+('web programming', 'Learn HTML, CSS, and JavaScript to build interactive websites.', '3 months'),
+('computer networking', 'Understand the basics of computer networks and protocols.', '4 months'),
+('cyber security', 'Learn to protect systems and data from cyber threats.', '5 months'),
+('database management', 'Master database design and SQL for data management.', '2 months'),
+('machine learning', 'Introduction to algorithms for machine learning.', '6 months');
+
+
+CREATE TABLE blog (
+    blog_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO blog (title, content, author) VALUES
+('Getting Started with Web Development', 'Web development involves creating websites and applications...', 'Shanto'),
+('Exploring Artificial Intelligence', 'Artificial Intelligence (AI) is shaping the future of technology...', 'Al Shahriar'),
+('Understanding Data Structures', 'Data structures are fundamental for efficient data management...', 'Suma'),
+('Cloud Computing Essentials', 'Cloud computing provides scalable and on-demand computing resources...', 'Tajmin Khanam'),
+('The Basics of Machine Learning', 'Machine Learning is a branch of AI that deals with building predictive models...', 'Pranto'),
+('Cybersecurity in the Modern Era', 'Protecting digital assets is critical in today’s interconnected world...', 'Antu Marma'),
+('Mastering Python for Beginners', 'Python is a versatile language suitable for various applications...', 'Mehedi Hasan');
